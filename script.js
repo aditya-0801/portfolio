@@ -241,6 +241,7 @@ function initCounters() {
       if (!entry.isIntersecting) return;
       const el = entry.target;
       const target = parseInt(el.dataset.count, 10);
+      const suffix = el.dataset.suffix !== undefined ? el.dataset.suffix : (target >= 100 ? '+' : '');
       const duration = 1400;
       const start = performance.now();
 
@@ -249,7 +250,7 @@ function initCounters() {
         const eased = 1 - Math.pow(1 - progress, 3);
         el.textContent = Math.floor(eased * target);
         if (progress < 1) requestAnimationFrame(frame);
-        else el.textContent = target + (target >= 100 ? '+' : '');
+        else el.textContent = target + suffix;
       }
       requestAnimationFrame(frame);
       observer.unobserve(el);
