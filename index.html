@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya Kharadkar | AI &amp; ML Engineer</title>
+  <meta name="description" content="Aditya Kharadkar — Artificial Intelligence &amp; Machine Learning student, data analyst and aspiring AI engineer. Portfolio of projects, skills and experience.">
+  <meta name="theme-color" content="#0a0e1a">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aditya Kharadkar | AI & ML Engineer">
+  <meta property="og:description" content="Portfolio showcasing AI/ML projects, data analytics work and certifications.">
+  <meta property="og:type" content="website">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== Loading Screen ===== -->
+  <div id="loader" class="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <svg class="loader-graph" viewBox="0 0 120 60" width="120" height="60">
+        <polyline points="0,45 20,30 40,38 60,10 80,22 100,5 120,15" />
+      </svg>
+      <p class="loader-text">initializing<span class="dots">...</span></p>
+    </div>
+  </div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Cursor glow -->
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+  <!-- ===== Navbar ===== -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-container">
+      <a href="#hero" class="logo">AK<span class="logo-dot">.</span></a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#certifications" class="nav-link">Certifications</a></li>
+        <li><a href="#resume" class="nav-link">Resume</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <a href="#contact" class="btn btn-small btn-gradient nav-cta">Let's talk</a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="hero" id="hero">
+    <canvas id="networkCanvas" class="network-canvas" aria-hidden="true"></canvas>
+    <div class="hero-gradient" aria-hidden="true"></div>
+
+    <div class="hero-content container">
+      <p class="hero-eyebrow reveal-up"><span class="status-dot"></span> Available for AI/ML internships &amp; collaborations</p>
+
+      <h1 class="hero-title reveal-up">
+        Hi, I'm <span class="gradient-text">Aditya Kharadkar</span>
+      </h1>
+
+      <div class="hero-role reveal-up">
+        <span class="role-prefix">I build with</span>
+        <span class="typing-wrap"><span id="typingText" class="typing-text"></span><span class="typing-cursor">|</span></span>
+      </div>
+
+      <p class="hero-desc reveal-up">
+        4th-semester B.Tech student in Artificial Intelligence &amp; Machine Learning at ITM Gwalior,
+        turning raw data into models, dashboards and products that make decisions easier.
+      </p>
+
+      <div class="hero-actions reveal-up">
+        <a href="assets/Aditya_Kharadkar_Resume.pdf" class="btn btn-gradient" download>
+          <span>Download Resume</span>
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1v9m0 0L4.5 6.5M8 10l3.5-3.5M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#projects" class="btn btn-outline">View Projects</a>
+        <a href="#contact" class="btn btn-ghost">Contact Me</a>
+      </div>
+
+      <div class="hero-social reveal-up">
+        <a href="https://linkedin.com/in/aditya-kharadkar-1a174b321" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        </a>
+        <a href="https://github.com/aditya-0801" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
+        </a>
+        <a href="mailto:adityakharadkar2@gmail.com" aria-label="Email" class="social-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.5"/><path d="M2.5 6.5l9.5 7 9.5-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="orbit-ring ring-1"></div>
+      <div class="orbit-ring ring-2"></div>
+      <div class="avatar-frame">
+        <img src="assets/images/profile.jpg" alt="Aditya Kharadkar" class="avatar-img">
+      </div>
+      <div class="floating-chip chip-1">🐍 Python</div>
+      <div class="floating-chip chip-2">🧠 ML</div>
+      <div class="floating-chip chip-3">📊 Power BI</div>
+      <div class="floating-chip chip-4">⚡ Flask</div>
+    </div>
+
+    <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+      <span class="scroll-cue-line"></span>
+      <span>Scroll</span>
+    </a>
+  </section>
+
+  <!-- ===== About ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <p class="section-eyebrow reveal-up">01 &mdash; About</p>
+      <h2 class="section-title reveal-up">The person behind the models</h2>
+
+      <div class="about-grid">
+        <div class="about-text reveal-up">
+          <p>
+            I'm an Artificial Intelligence &amp; Machine Learning student at ITM Gwalior (Sithouli Campus),
+            currently in my 4th semester, based in Gwalior, Madhya Pradesh. I'm passionate about AI,
+            Machine Learning, Data Science and Computer Vision &mdash; and I like building intelligent
+            applications that solve real, tangible problems rather than staying in a notebook.
+          </p>
+          <p>
+            My work sits at the intersection of data and decisions: cleaning messy datasets, training
+            models that generalise, and packaging the results into dashboards and apps that people who
+            aren't data scientists can actually use. I care about the "why" behind a model as much as
+            the accuracy score.
+          </p>
+
+          <div class="about-traits">
+            <div class="trait-pill"><span>🧩</span> Problem Solver</div>
+            <div class="trait-pill"><span>⚡</span> Quick Learner</div>
+            <div class="trait-pill"><span>🤝</span> Team Player</div>
+            <div class="trait-pill"><span>🔬</span> Research-Interested</div>
+            <div class="trait-pill"><span>🚀</span> Builds Real-World AI</div>
+          </div>
+        </div>
+
+        <div class="about-stats reveal-up">
+          <div class="stat-card">
+            <span class="stat-number" data-count="5">0</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-count="7">0</span>
+            <span class="stat-label">Certificates Earned</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-count="50">0</span>
+            <span class="stat-label">LeetCode Problems Solved</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-count="4">0</span>
+            <span class="stat-label">Internships Completed</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Skills ===== -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <p class="section-eyebrow reveal-up">02 &mdash; Skills</p>
+      <h2 class="section-title reveal-up">Tools I train with</h2>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal-up">
+          <h3 class="skill-cat-title">Programming</h3>
+          <div class="skill-bar-item" data-level="85"><div class="skill-bar-top"><span>Python</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+          <div class="skill-bar-item" data-level="65"><div class="skill-bar-top"><span>C++</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+          <div class="skill-bar-item" data-level="75"><div class="skill-bar-top"><span>SQL</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+          <div class="skill-bar-item" data-level="80"><div class="skill-bar-top"><span>HTML / CSS</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+          <div class="skill-bar-item" data-level="60"><div class="skill-bar-top"><span>JavaScript</span><span class="skill-pct">60%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        </div>
+
+        <div class="skill-card reveal-up">
+          <h3 class="skill-cat-title">Machine Learning</h3>
+          <div class="skill-bar-item" data-level="80"><div class="skill-bar-top"><span>Scikit-Learn</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+          <div class="skill-bar-item" data-level="85"><div class="skill-bar-top"><span>Pandas</span><span class="skill-pct">85%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+          <div class="skill-bar-item" data-level="80"><div class="skill-bar-top"><span>NumPy</span><span class="skill-pct">80%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+          <div class="skill-bar-item" data-level="75"><div class="skill-bar-top"><span>Matplotlib</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+          <div class="skill-bar-item" data-level="70"><div class="skill-bar-top"><span>Seaborn</span><span class="skill-pct">70%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        </div>
+
+        <div class="skill-card reveal-up">
+          <h3 class="skill-cat-title">Data &amp; Tools</h3>
+          <div class="skill-bar-item" data-level="65"><div class="skill-bar-top"><span>Flask</span><span class="skill-pct">65%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+          <div class="skill-bar-item" data-level="75"><div class="skill-bar-top"><span>Git &amp; GitHub</span><span class="skill-pct">75%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+          <div class="skill-bar-item" data-level="78"><div class="skill-bar-top"><span>Power BI</span><span class="skill-pct">78%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+          <div class="skill-bar-item" data-level="55"><div class="skill-bar-top"><span>Deep Learning Basics</span><span class="skill-pct">55%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+          <div class="skill-bar-item" data-level="40"><div class="skill-bar-top"><span>Computer Vision <em>(learning)</em></span><span class="skill-pct">40%</span></div><div class="skill-track"><div class="skill-fill"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Education ===== -->
+  <section class="section" id="education">
+    <div class="container">
+      <p class="section-eyebrow reveal-up">03 &mdash; Education</p>
+      <h2 class="section-title reveal-up">Academic background</h2>
+
+      <div class="edu-card reveal-up">
+        <div class="edu-icon">🎓</div>
+        <div class="edu-info">
+          <h3>Bachelor of Technology &mdash; Artificial Intelligence &amp; Machine Learning</h3>
+          <p class="edu-college">ITM Gwalior, Sithouli Campus</p>
+          <p class="edu-meta">2024 &ndash; 2028 &middot; Gwalior, Madhya Pradesh</p>
+        </div>
+        <div class="edu-cgpa">
+          <span class="edu-cgpa-num">8.11</span>
+          <span class="edu-cgpa-label">CGPA / 10.00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Experience (Timeline) ===== -->
+  <section class="section section-alt" id="experience">
+    <div class="container">
+      <p class="section-eyebrow reveal-up">04 &mdash; Experience</p>
+      <h2 class="section-title reveal-up">Where I've worked with data</h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Data Science Master Intern</h3>
+            <p class="timeline-org">Siemens &middot; 04/2026 &ndash; 06/2026</p>
+            <p class="timeline-desc">
+              Worked on data science workflows and analytics projects, contributing to model
+              development and reporting within a large-scale industrial data environment.
+            </p>
+            <div class="timeline-tags">
+              <span>Data Science</span><span>Python</span><span>Analytics</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>AIML Intern</h3>
+            <p class="timeline-org">Google for Developers &middot; 01/2026 &ndash; 03/2026</p>
+            <p class="timeline-desc">
+              Worked on Artificial Intelligence and Machine Learning projects, applying core ML
+              concepts to practical, guided development tasks.
+            </p>
+            <div class="timeline-tags">
+              <span>AI</span><span>Machine Learning</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Data Analyst Intern</h3>
+            <p class="timeline-org">Cognifyz Technologies &middot; 11/2025 &ndash; 12/2025</p>
+            <p class="timeline-desc">
+              Performed data analysis and visualization tasks on real-world datasets to surface
+              insights for stakeholders.
+            </p>
+            <div class="timeline-tags">
+              <span>EDA</span><span>Data Visualization</span><span>Python</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal-up">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <h3>Data Analyst Intern</h3>
+            <p class="timeline-org">PN Infosys &middot; 03/2025 &ndash; 09/2025</p>
+            <p class="timeline-desc">
+              Worked on exploratory data analysis and dashboards, applying data cleaning,
+              visualization and machine learning techniques using Python, Power BI and SQL.
+            </p>
+            <div class="timeline-tags">
+              <span>Python</span><span>Power BI</span><span>SQL</span><span>Machine Learning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Projects ===== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <p class="section-eyebrow reveal-up">05 &mdash; Projects</p>
+      <h2 class="section-title reveal-up">Featured projects</h2>
+
+      <div class="filter-bar reveal-up" id="filterBar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ml">Machine Learning</button>
+        <button class="filter-btn" data-filter="data">Data Analysis</button>
+        <button class="filter-btn" data-filter="dashboard">Dashboards</button>
+      </div>
+
+      <div class="projects-grid" id="projectsGrid">
+        <article class="project-card featured reveal-up" data-cat="ml">
+          <div class="project-glow"></div>
+          <span class="project-tag">Flagship</span>
+          <h3>DataMind AI</h3>
+          <p>
+            An AI-powered AutoML and data analytics platform. Upload a dataset and it handles EDA,
+            trains and compares 9 machine learning models, and generates AI-written PDF reports &mdash;
+            powered by Gemini AI for narrative summaries and insights.
+          </p>
+          <div class="project-stack">
+            <span>Python</span><span>Flask</span><span>Scikit-Learn</span><span>Gemini AI</span><span>PDF Reporting</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="project-link">Live Demo →</a>
+            <a href="#" class="project-link">Source Code →</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal-up" data-cat="ml">
+          <h3>ML Insight Engine</h3>
+          <p>A smart data analysis system that automatically generates visualizations, model predictions and readable reports from any dataset.</p>
+          <div class="project-stack"><span>Python</span><span>Pandas</span><span>Matplotlib</span></div>
+          <div class="project-links">
+            <a href="#" class="project-link">Source Code →</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal-up" data-cat="ml">
+          <h3>Student Result Predictor</h3>
+          <p>A Flask web app that predicts student pass/fail outcomes using a logistic regression model on academic performance data.</p>
+          <div class="project-stack"><span>Python</span><span>Flask</span><span>Logistic Regression</span></div>
+          <div class="project-links">
+            <a href="#" class="project-link">Source Code →</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal-up" data-cat="ml">
+          <h3>Car Price Prediction</h3>
+          <p>A regression model estimating used-car prices from specifications and market features.</p>
+          <div class="project-stack"><span>Python</span><span>Scikit-Learn</span></div>
+          <div class="project-links">
+            <a href="#" class="project-link">Source Code →</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal-up" data-cat="data">
+          <h3>Netflix Data Analysis</h3>
+          <p>Exploratory data analysis of the Netflix catalog to uncover trends across genres, ratings and release years.</p>
+          <div class="project-stack"><span>Python</span><span>Pandas</span><span>Seaborn</span></div>
+          <div class="project-links">
+            <a href="#" class="project-link">Source Code →</a>
+          </div>
+        </article>
+
+        <article class="project-card reveal-up" data-cat="dashboard">
+          <h3>Super Store Sales Dashboard</h3>
+          <p>An interactive Power BI dashboard turning raw super store sales data into actionable business insights.</p>
+          <div class="project-stack"><span>Power BI</span><span>DAX</span></div>
+          <div class="project-links">
+            <a href="#" class="project-link">View Dashboard →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Certifications ===== -->
+  <section class="section section-alt" id="certifications">
+    <div class="container">
+      <p class="section-eyebrow reveal-up">06 &mdash; Certifications</p>
+      <h2 class="section-title reveal-up">Certificate gallery</h2>
+
+      <div class="cert-grid">
+        <div class="cert-card reveal-up"><div class="cert-icon">☁️</div><h4>Oracle Cloud Infrastructure AI Foundations Associate</h4><p>Oracle</p></div>
+        <div class="cert-card reveal-up"><div class="cert-icon">📊</div><h4>Oracle Data Science Professional</h4><p>Oracle</p></div>
+        <div class="cert-card reveal-up"><div class="cert-icon">✨</div><h4>Oracle Generative AI Professional</h4><p>Oracle</p></div>
+        <div class="cert-card reveal-up"><div class="cert-icon">🧭</div><h4>Ethical Considerations for Generative AI</h4><p>IBM</p></div>
+        <div class="cert-card reveal-up"><div class="cert-icon">🐍</div><h4>Python Certification</h4><p>IIT Bombay</p></div>
+        <div class="cert-card reveal-up"><div class="cert-icon">🤖</div><h4>GenAI Powered Data Analytics Job Simulation</h4><p>Tata</p></div>
+        <div class="cert-card reveal-up"><div class="cert-icon">🏆</div><h4>50 Days of LeetCode</h4><p>LeetCode</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Resume ===== -->
+  <section class="section" id="resume">
+    <div class="container">
+      <p class="section-eyebrow reveal-up">07 &mdash; Resume</p>
+      <h2 class="section-title reveal-up">One page, full picture</h2>
+
+      <div class="resume-panel reveal-up">
+        <div class="resume-preview">
+          <div class="resume-preview-line w-60"></div>
+          <div class="resume-preview-line w-40"></div>
+          <div class="resume-preview-block"></div>
+          <div class="resume-preview-line w-80"></div>
+          <div class="resume-preview-line w-70"></div>
+          <div class="resume-preview-line w-50"></div>
+          <div class="resume-preview-block small"></div>
+        </div>
+        <div class="resume-info">
+          <h3>Aditya Kharadkar — Resume</h3>
+          <p>Education, skills, experience, projects and certifications in one downloadable PDF.</p>
+          <a href="assets/Aditya_Kharadkar_Resume.pdf" class="btn btn-gradient" download>
+            <span>Download Resume (PDF)</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 1v9m0 0L4.5 6.5M8 10l3.5-3.5M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section class="section section-alt" id="contact">
+    <div class="container">
+      <p class="section-eyebrow reveal-up">08 &mdash; Contact</p>
+      <h2 class="section-title reveal-up">Let's build something intelligent</h2>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal-up">
+          <p class="contact-lead">
+            Open to internships, research collaborations and interesting AI/ML problems.
+            Reach out and I'll get back to you.
+          </p>
+
+          <a class="contact-row" href="mailto:adityakharadkar2@gmail.com">
+            <span class="contact-row-icon">✉️</span>
+            <span>adityakharadkar2@gmail.com</span>
+          </a>
+          <a class="contact-row" href="tel:+918236032204">
+            <span class="contact-row-icon">📞</span>
+            <span>+91 8236032204</span>
+          </a>
+          <a class="contact-row" href="https://linkedin.com/in/aditya-kharadkar-1a174b321" target="_blank" rel="noopener">
+            <span class="contact-row-icon">🔗</span>
+            <span>linkedin.com/in/aditya-kharadkar-1a174b321</span>
+          </a>
+          <a class="contact-row" href="https://github.com/aditya-0801" target="_blank" rel="noopener">
+            <span class="contact-row-icon">💻</span>
+            <span>github.com/aditya-0801</span>
+          </a>
+          <div class="contact-row contact-row-static">
+            <span class="contact-row-icon">📍</span>
+            <span>Gwalior, Madhya Pradesh, India</span>
+          </div>
+        </div>
+
+        <form class="contact-form reveal-up" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name">
+            <span class="form-error" data-for="name"></span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com">
+            <span class="form-error" data-for="email"></span>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required placeholder="What's this about?">
+            <span class="form-error" data-for="subject"></span>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell me a bit more..."></textarea>
+            <span class="form-error" data-for="message"></span>
+          </div>
+          <button type="submit" class="btn btn-gradient btn-full">
+            <span>Send Message</span>
+          </button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#hero" class="logo">AK<span class="logo-dot">.</span></a>
+        <p>Artificial Intelligence &amp; Machine Learning Student</p>
+      </div>
+
+      <div class="footer-social">
+        <a href="https://linkedin.com/in/aditya-kharadkar-1a174b321" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.03-1.85-3.03-1.86 0-2.14 1.45-2.14 2.94v5.66H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        </a>
+        <a href="https://github.com/aditya-0801" target="_blank" rel="noopener" aria-label="GitHub" class="social-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2.2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2 0 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.4-1.3-5.4-5.9 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.4 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg>
+        </a>
+        <a href="mailto:adityakharadkar2@gmail.com" aria-label="Email" class="social-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z" stroke="currentColor" stroke-width="1.5"/><path d="M2.5 6.5l9.5 7 9.5-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </a>
+      </div>
+
+      <p class="footer-copy">© <span id="year"></span> Aditya Kharadkar. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M8 13V3M8 3L3.5 7.5M8 3l4.5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
